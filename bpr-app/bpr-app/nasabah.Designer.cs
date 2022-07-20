@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.idBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.alamatBox = new System.Windows.Forms.TextBox();
             this.usahaBox = new System.Windows.Forms.TextBox();
             this.teleponBox = new System.Windows.Forms.TextBox();
@@ -47,11 +49,6 @@
             this.nasabahListBox = new System.Windows.Forms.DataGridView();
             this.tambahBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rekening = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.no_hp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenis_usaha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nasabahListBox)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +56,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.idBox);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.alamatBox);
             this.panel1.Controls.Add(this.usahaBox);
             this.panel1.Controls.Add(this.teleponBox);
@@ -83,37 +82,54 @@
             this.panel1.Size = new System.Drawing.Size(1132, 682);
             this.panel1.TabIndex = 1;
             // 
+            // idBox
+            // 
+            this.idBox.Location = new System.Drawing.Point(114, 79);
+            this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
+            this.idBox.Size = new System.Drawing.Size(47, 20);
+            this.idBox.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 79);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "ID :";
+            // 
             // alamatBox
             // 
-            this.alamatBox.Location = new System.Drawing.Point(113, 215);
+            this.alamatBox.Location = new System.Drawing.Point(114, 250);
             this.alamatBox.Name = "alamatBox";
             this.alamatBox.Size = new System.Drawing.Size(283, 20);
             this.alamatBox.TabIndex = 19;
             // 
             // usahaBox
             // 
-            this.usahaBox.Location = new System.Drawing.Point(113, 178);
+            this.usahaBox.Location = new System.Drawing.Point(114, 213);
             this.usahaBox.Name = "usahaBox";
             this.usahaBox.Size = new System.Drawing.Size(283, 20);
             this.usahaBox.TabIndex = 18;
             // 
             // teleponBox
             // 
-            this.teleponBox.Location = new System.Drawing.Point(113, 143);
+            this.teleponBox.Location = new System.Drawing.Point(114, 178);
             this.teleponBox.Name = "teleponBox";
             this.teleponBox.Size = new System.Drawing.Size(283, 20);
             this.teleponBox.TabIndex = 17;
             // 
             // rekeningBox
             // 
-            this.rekeningBox.Location = new System.Drawing.Point(113, 107);
+            this.rekeningBox.Location = new System.Drawing.Point(114, 142);
             this.rekeningBox.Name = "rekeningBox";
             this.rekeningBox.Size = new System.Drawing.Size(283, 20);
             this.rekeningBox.TabIndex = 16;
             // 
             // namaBox
             // 
-            this.namaBox.Location = new System.Drawing.Point(113, 72);
+            this.namaBox.Location = new System.Drawing.Point(114, 107);
             this.namaBox.Name = "namaBox";
             this.namaBox.Size = new System.Drawing.Size(283, 20);
             this.namaBox.TabIndex = 15;
@@ -121,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 215);
+            this.label6.Location = new System.Drawing.Point(28, 250);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 14;
@@ -130,7 +146,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 178);
+            this.label5.Location = new System.Drawing.Point(28, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 13;
@@ -139,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 143);
+            this.label4.Location = new System.Drawing.Point(28, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 12;
@@ -148,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 110);
+            this.label3.Location = new System.Drawing.Point(28, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 11;
@@ -157,7 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 75);
+            this.label2.Location = new System.Drawing.Point(28, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 10;
@@ -165,7 +181,7 @@
             // 
             // showBtn
             // 
-            this.showBtn.Location = new System.Drawing.Point(30, 254);
+            this.showBtn.Location = new System.Drawing.Point(31, 289);
             this.showBtn.Name = "showBtn";
             this.showBtn.Size = new System.Drawing.Size(82, 52);
             this.showBtn.TabIndex = 9;
@@ -190,7 +206,7 @@
             // 
             // hapusBtn
             // 
-            this.hapusBtn.Location = new System.Drawing.Point(302, 255);
+            this.hapusBtn.Location = new System.Drawing.Point(303, 290);
             this.hapusBtn.Name = "hapusBtn";
             this.hapusBtn.Size = new System.Drawing.Size(83, 52);
             this.hapusBtn.TabIndex = 6;
@@ -200,7 +216,7 @@
             // 
             // ubahBtn
             // 
-            this.ubahBtn.Location = new System.Drawing.Point(209, 255);
+            this.ubahBtn.Location = new System.Drawing.Point(210, 290);
             this.ubahBtn.Name = "ubahBtn";
             this.ubahBtn.Size = new System.Drawing.Size(87, 51);
             this.ubahBtn.TabIndex = 5;
@@ -211,12 +227,6 @@
             // nasabahListBox
             // 
             this.nasabahListBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nasabahListBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nama,
-            this.rekening,
-            this.no_hp,
-            this.jenis_usaha,
-            this.alamat});
             this.nasabahListBox.Location = new System.Drawing.Point(428, 103);
             this.nasabahListBox.Name = "nasabahListBox";
             this.nasabahListBox.Size = new System.Drawing.Size(684, 377);
@@ -226,7 +236,7 @@
             // 
             // tambahBtn
             // 
-            this.tambahBtn.Location = new System.Drawing.Point(118, 255);
+            this.tambahBtn.Location = new System.Drawing.Point(119, 290);
             this.tambahBtn.Name = "tambahBtn";
             this.tambahBtn.Size = new System.Drawing.Size(85, 51);
             this.tambahBtn.TabIndex = 1;
@@ -243,39 +253,6 @@
             this.label1.Size = new System.Drawing.Size(151, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "NASABAH";
-            // 
-            // Nama
-            // 
-            this.Nama.DataPropertyName = "nama";
-            this.Nama.HeaderText = "Nama Nasabah";
-            this.Nama.Name = "Nama";
-            this.Nama.Width = 125;
-            // 
-            // rekening
-            // 
-            this.rekening.DataPropertyName = "rekening";
-            this.rekening.HeaderText = "Rekening";
-            this.rekening.Name = "rekening";
-            this.rekening.ReadOnly = true;
-            // 
-            // no_hp
-            // 
-            this.no_hp.DataPropertyName = "no_hp";
-            this.no_hp.HeaderText = "No. Telepon";
-            this.no_hp.Name = "no_hp";
-            // 
-            // jenis_usaha
-            // 
-            this.jenis_usaha.DataPropertyName = "jenis_usaha";
-            this.jenis_usaha.HeaderText = "Jenis Usaha";
-            this.jenis_usaha.Name = "jenis_usaha";
-            // 
-            // alamat
-            // 
-            this.alamat.DataPropertyName = "alamat";
-            this.alamat.HeaderText = "Alamat";
-            this.alamat.Name = "alamat";
-            this.alamat.Width = 155;
             // 
             // nasabah
             // 
@@ -312,10 +289,7 @@
         private System.Windows.Forms.TextBox rekeningBox;
         private System.Windows.Forms.TextBox namaBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nama;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rekening;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no_hp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jenis_usaha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alamat;
+        private System.Windows.Forms.TextBox idBox;
+        private System.Windows.Forms.Label label7;
     }
 }

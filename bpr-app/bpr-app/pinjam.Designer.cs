@@ -29,26 +29,28 @@
         private void InitializeComponent()
         {
             this.pinjamListBox = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bungaBox = new System.Windows.Forms.TextBox();
+            this.waktuBox = new System.Windows.Forms.TextBox();
+            this.pinjamanBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.showBtn = new System.Windows.Forms.Button();
+            this.hapusBtn = new System.Windows.Forms.Button();
+            this.ubahBtn = new System.Windows.Forms.Button();
+            this.tambahBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.statusBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.idBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tanggalBox = new System.Windows.Forms.DateTimePicker();
+            this.namaBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pinjamListBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,50 +58,41 @@
             // pinjamListBox
             // 
             this.pinjamListBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pinjamListBox.Location = new System.Drawing.Point(14, 253);
+            this.pinjamListBox.Location = new System.Drawing.Point(14, 281);
             this.pinjamListBox.Name = "pinjamListBox";
-            this.pinjamListBox.Size = new System.Drawing.Size(1080, 414);
+            this.pinjamListBox.Size = new System.Drawing.Size(1080, 386);
             this.pinjamListBox.TabIndex = 0;
+            this.pinjamListBox.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pinjamListBox_CellDoubleClick);
+            this.pinjamListBox.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.pinjamListBox_CellFormatting);
             // 
-            // textBox6
+            // bungaBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(117, 194);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(283, 20);
-            this.textBox6.TabIndex = 34;
+            this.bungaBox.Location = new System.Drawing.Point(117, 192);
+            this.bungaBox.Name = "bungaBox";
+            this.bungaBox.Size = new System.Drawing.Size(283, 20);
+            this.bungaBox.TabIndex = 33;
+            this.bungaBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bungaBox_KeyPress);
             // 
-            // textBox5
+            // waktuBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(117, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(283, 20);
-            this.textBox5.TabIndex = 33;
+            this.waktuBox.Location = new System.Drawing.Point(117, 157);
+            this.waktuBox.Name = "waktuBox";
+            this.waktuBox.Size = new System.Drawing.Size(283, 20);
+            this.waktuBox.TabIndex = 32;
+            this.waktuBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.waktuBox_KeyPress);
             // 
-            // textBox4
+            // pinjamanBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 122);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(283, 20);
-            this.textBox4.TabIndex = 32;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(117, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(283, 20);
-            this.textBox3.TabIndex = 31;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(117, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(283, 20);
-            this.textBox2.TabIndex = 30;
+            this.pinjamanBox.Location = new System.Drawing.Point(117, 121);
+            this.pinjamanBox.Name = "pinjamanBox";
+            this.pinjamanBox.Size = new System.Drawing.Size(283, 20);
+            this.pinjamanBox.TabIndex = 31;
+            this.pinjamanBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pinjamanBox_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 194);
+            this.label6.Location = new System.Drawing.Point(31, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 29;
@@ -108,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 157);
+            this.label5.Location = new System.Drawing.Point(31, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 28;
@@ -117,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 122);
+            this.label4.Location = new System.Drawing.Point(31, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 27;
@@ -126,7 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 89);
+            this.label3.Location = new System.Drawing.Point(31, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 26;
@@ -135,47 +128,51 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 54);
+            this.label2.Location = new System.Drawing.Point(31, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 25;
             this.label2.Text = "Nama :";
             // 
-            // button5
+            // showBtn
             // 
-            this.button5.Location = new System.Drawing.Point(510, 89);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 37);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Show";
-            this.button5.UseVisualStyleBackColor = true;
+            this.showBtn.Location = new System.Drawing.Point(510, 89);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(87, 37);
+            this.showBtn.TabIndex = 24;
+            this.showBtn.Text = "Show";
+            this.showBtn.UseVisualStyleBackColor = true;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
             // 
-            // button3
+            // hapusBtn
             // 
-            this.button3.Location = new System.Drawing.Point(417, 140);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 37);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Hapus";
-            this.button3.UseVisualStyleBackColor = true;
+            this.hapusBtn.Location = new System.Drawing.Point(417, 140);
+            this.hapusBtn.Name = "hapusBtn";
+            this.hapusBtn.Size = new System.Drawing.Size(87, 37);
+            this.hapusBtn.TabIndex = 23;
+            this.hapusBtn.Text = "Hapus";
+            this.hapusBtn.UseVisualStyleBackColor = true;
+            this.hapusBtn.Click += new System.EventHandler(this.hapusBtn_Click);
             // 
-            // button2
+            // ubahBtn
             // 
-            this.button2.Location = new System.Drawing.Point(603, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 37);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ubahBtn.Location = new System.Drawing.Point(603, 89);
+            this.ubahBtn.Name = "ubahBtn";
+            this.ubahBtn.Size = new System.Drawing.Size(87, 37);
+            this.ubahBtn.TabIndex = 22;
+            this.ubahBtn.Text = "Ubah";
+            this.ubahBtn.UseVisualStyleBackColor = true;
+            this.ubahBtn.Click += new System.EventHandler(this.ubahBtn_Click);
             // 
-            // button1
+            // tambahBtn
             // 
-            this.button1.Location = new System.Drawing.Point(417, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Tambah";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tambahBtn.Location = new System.Drawing.Point(417, 89);
+            this.tambahBtn.Name = "tambahBtn";
+            this.tambahBtn.Size = new System.Drawing.Size(87, 37);
+            this.tambahBtn.TabIndex = 21;
+            this.tambahBtn.Text = "Tambah";
+            this.tambahBtn.UseVisualStyleBackColor = true;
+            this.tambahBtn.Click += new System.EventHandler(this.tambahBtn_Click);
             // 
             // label1
             // 
@@ -187,12 +184,12 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Tabungan Rencana";
             // 
-            // textBox1
+            // statusBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(462, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(283, 20);
-            this.textBox1.TabIndex = 36;
+            this.statusBox.Location = new System.Drawing.Point(462, 51);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.Size = new System.Drawing.Size(283, 20);
+            this.statusBox.TabIndex = 36;
             // 
             // label7
             // 
@@ -222,22 +219,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.idBox);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.tanggalBox);
+            this.panel1.Controls.Add(this.namaBox);
             this.panel1.Controls.Add(this.pinjamListBox);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.statusBox);
+            this.panel1.Controls.Add(this.tambahBtn);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.ubahBtn);
+            this.panel1.Controls.Add(this.hapusBtn);
+            this.panel1.Controls.Add(this.bungaBox);
+            this.panel1.Controls.Add(this.showBtn);
+            this.panel1.Controls.Add(this.waktuBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.pinjamanBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label6);
@@ -247,6 +246,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 682);
             this.panel1.TabIndex = 39;
+            // 
+            // idBox
+            // 
+            this.idBox.Location = new System.Drawing.Point(117, 55);
+            this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
+            this.idBox.Size = new System.Drawing.Size(50, 20);
+            this.idBox.TabIndex = 42;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 13);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "ID :";
+            // 
+            // tanggalBox
+            // 
+            this.tanggalBox.Location = new System.Drawing.Point(117, 229);
+            this.tanggalBox.Name = "tanggalBox";
+            this.tanggalBox.Size = new System.Drawing.Size(283, 20);
+            this.tanggalBox.TabIndex = 40;
+            // 
+            // namaBox
+            // 
+            this.namaBox.FormattingEnabled = true;
+            this.namaBox.Location = new System.Drawing.Point(117, 85);
+            this.namaBox.Name = "namaBox";
+            this.namaBox.Size = new System.Drawing.Size(283, 21);
+            this.namaBox.TabIndex = 39;
+            this.namaBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // pinjam
             // 
@@ -266,25 +298,27 @@
         #endregion
 
         private System.Windows.Forms.DataGridView pinjamListBox;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox bungaBox;
+        private System.Windows.Forms.TextBox waktuBox;
+        private System.Windows.Forms.TextBox pinjamanBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button showBtn;
+        private System.Windows.Forms.Button hapusBtn;
+        private System.Windows.Forms.Button ubahBtn;
+        private System.Windows.Forms.Button tambahBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox statusBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox namaBox;
+        private System.Windows.Forms.DateTimePicker tanggalBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox idBox;
     }
 }

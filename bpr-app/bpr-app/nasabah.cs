@@ -24,7 +24,7 @@ namespace bpr_app
         private void LoadPeopleList()
         {
             people  = SqliteDataAccess.LoadNasabah();
-            Console.WriteLine(people);
+        
 
             WireUpPeopleList();
         }
@@ -32,8 +32,10 @@ namespace bpr_app
         private void WireUpPeopleList()
         {
             nasabahListBox.DataSource = null;
-            nasabahListBox.DataSource = people;
+            nasabahListBox.DataSource = people.Select(o => new 
+            { Nama = o.nama, Rekening = o.rekening, Telepon = o.no_hp , Usaha = o.jenis_usaha, Alamat = o.alamat, ID = o.id }).ToList(); ;
 
+            nasabahListBox.Columns["ID"].Visible = false;
 
         }
 
@@ -73,6 +75,7 @@ namespace bpr_app
         {
             NasabahModel p = new NasabahModel();
 
+            p.id = Convert.ToInt32(idBox.Text);
             p.nama = namaBox.Text;
             p.rekening = rekeningBox.Text;
             p.no_hp = teleponBox.Text;
@@ -83,6 +86,7 @@ namespace bpr_app
             {
                 SqliteDataAccess.UpdateNasabah(p);
 
+                idBox.Text = "";
                 namaBox.Text = "";
                 rekeningBox.Text = "";
                 teleponBox.Text = "";
@@ -104,12 +108,19 @@ namespace bpr_app
             MessageBox.Show("akan menghapus data", "info message", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             NasabahModel p = new NasabahModel();
 
-           
-            p.rekening = rekeningBox.Text;
+
+            p.id = Convert.ToInt32(idBox.Text);
 
             try
             {
                 SqliteDataAccess.DeleteNasabah(p);
+
+                idBox.Text = "";
+                namaBox.Text = "";
+                rekeningBox.Text = "";
+                teleponBox.Text = "";
+                usahaBox.Text = "";
+                alamatBox.Text = "";
 
                 LoadPeopleList();
             }
@@ -131,10 +142,11 @@ namespace bpr_app
             if (e.RowIndex >= 0)
             {
                 nasabahListBox.CurrentRow.Selected = true;
+                idBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString();
                 namaBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["Nama"].FormattedValue.ToString();
-                rekeningBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["rekening"].FormattedValue.ToString();
-                teleponBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["no_hp"].FormattedValue.ToString();
-                usahaBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["jenis_usaha"].FormattedValue.ToString();
+                rekeningBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["Rekening"].FormattedValue.ToString();
+                teleponBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["Telepon"].FormattedValue.ToString();
+                usahaBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["Usaha"].FormattedValue.ToString();
                 alamatBox.Text = nasabahListBox.Rows[e.RowIndex].Cells["alamat"].FormattedValue.ToString();
 
             }
@@ -149,5 +161,9 @@ namespace bpr_app
         {
             nasabahListBox.Rows[e.RowIndex].HeaderCell.Value =(e.RowIndex+1).ToString() ;
         }
+
+      
+
+       
     }
 }
